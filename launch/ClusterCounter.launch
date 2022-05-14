@@ -1,0 +1,6 @@
+<launch>
+
+  <node name="cluster_counter" type="cluster_counter" pkg="cluster_counter" output="screen">
+  </node>
+
+</launch>
