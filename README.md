@@ -29,8 +29,7 @@ The approach to the solution is via a custom extended object tracking algorithm,
    
 5. Whenever any point of a cluster comes within the 2m proximity of the laser, the whole cluster will be considered an obstacle.
 6. A wall or a static object is within the proximity of 2m from the laser. As it fulfills all the conditions of the cluster, its data is also published on the topic.
-## **Difficulties faced**
-- There was a situation in which the point at the start of laser sweep and end of the sweep can be of the same cluster. Because of this exception, there was a major bug in the code which took me a few tries to debug that.
+
 ## **Result**
 - My obstacle detection package can detect obstacles and determine the number of objects, the average distance, and size of the object with a maximum error of ±5% and average error of ±2% and publishes the required data on a topic “/fin\_data” with a custom message type “Fin.msg”.
 
