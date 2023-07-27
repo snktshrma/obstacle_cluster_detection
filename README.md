@@ -1,8 +1,8 @@
 # obstacle_cluster_detection
 
-I developed an obstacle detection module using 2D Lidar scans. The environment contains one or more moving objects. When objects are within the range of 2 meters, a ros message is published as an output containing: the number of obstacles, the distances to the obstacles and the sizes of obstacles.
+A ROS based obstacle detection module using 2D Lidar scans. The environment contains one or more moving objects. When objects are within the range of 2 meters, a ros message is published as an output containing: the number of obstacles, the distances to the obstacles and the sizes of obstacles.
 ## **Approach**
-The approach to the solution is via a custom extended object tracking algorithm, known as DBSCAN. Steps: 
+The approach to the solution is via a custom extended object tracking algorithm. Steps: 
 
 1. Detect the laser points in the area
 2. Constructing the clusters of the laser points based on some filtering parameters
@@ -19,9 +19,9 @@ The approach to the solution is via a custom extended object tracking algorithm,
 1. Threshold Distance between 2 consecutive 'Non-infinity' points to consider them different clusters is taken as 0.5m.
 2. Minimum number of points in a neighborhood for a point to be considered 8.
 3. Any object or point within a proximity of 2m from the laser source, fulfilling the above 2 conditions, will be considered as the resulting obstacle.
-4. There was a confusion regarding the determination of size of object in terms of start angle and end angle(as these two were not defined in the PDF). So size is determined in two ways:
+4. Size is determined in two ways:
 
-   **a.** Distance between two extreme ends of the object
+   **a.** Distance between extremities of the object
    
    **b.** Angle subtended from the source to the objects
    
